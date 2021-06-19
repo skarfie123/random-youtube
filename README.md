@@ -1,6 +1,6 @@
 # Random YouTube
 
-Generate random selections from specific YouTube channels
+Generate random selections from specified YouTube channels
 
 See <https://skarfie123.github.io/random-youtube/>
 
