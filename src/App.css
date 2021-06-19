@@ -3,6 +3,11 @@
   padding: 2em;
 }
 
+.github {
+  height: 1em;
+  width: 1em;
+}
+
 .column {
   margin: auto;
 }

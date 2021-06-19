@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
 import Card from 'react-bootstrap/Card'
+import github from './GitHub-Mark.svg'
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +27,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Random YouTube</h1>
+        <h2>Random YouTube
+          &nbsp;
+          <a href="https://github.com/skarfie123/ghp-react"><img class="github"
+            src={github} alt="GitHub Logo" /></a>
+        </h2>
         <p>Generate random selections from specific YouTube channels</p>
         <InputGroup className="mb-3">
           <InputGroup.Prepend>
