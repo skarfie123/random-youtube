@@ -5,6 +5,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Card from "react-bootstrap/Card";
 import github from "./GitHub-Mark.svg";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 const API_KEY = "AIzaSyBIdrDqHEmofVBwnGwkDkKO1NAshKWpGCs";
 const url_stem = "https://www.youtube.com/channel/";
@@ -14,7 +16,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      url: example_url,
+      url: cookies.get("url") ? cookies.get("url") : example_url,
       title: "Threw It On The Ground",
       channelTitle: "thelonelyisland",
       thumbnail: "https://i.ytimg.com/vi/gAYL5H46QnQ/maxresdefault.jpg",
@@ -68,6 +70,9 @@ class App extends React.Component {
 
     //generate first video
     this.randomise();
+
+    //save to cookie
+    cookies.set("url", this.state.url, { path: "/" });
   }
 
   randomise() {
@@ -114,7 +119,7 @@ class App extends React.Component {
           </InputGroup.Prepend>
           <FormControl
             placeholder={example_url}
-            defaultValue={example_url}
+            defaultValue={this.state.url}
             aria-label="url"
             aria-describedby="url-label"
             onChange={this.handleUrlChange}
